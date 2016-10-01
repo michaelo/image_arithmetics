@@ -37,12 +37,6 @@ RESULT = DEST1 XOR DEST2
 
 
 
-Scripts to make:
-----------------
-1) xor.py inputimg1 inputimg2 outputimg
-2) scatter.py imgcode <type> outputimg1 outputimg2
-3)
-
 
 TODO
 ========
@@ -53,3 +47,14 @@ Superimpose XORed pixels from the other image
 Try:
 Create the XORed image of BASE1 and BASE2, then use the white pixels of IMGcode to extract the relevant pixels from this.
 Then XOR this code onto BASE1 and BASE2 (perhaps splitted by scatter.py)
+
+
+Name:
+---------------
+Image
+Kit
+Pipeline
+Arbitrary
+Encoding
+Code
+XOR
