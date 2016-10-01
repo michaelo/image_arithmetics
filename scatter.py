@@ -1,6 +1,13 @@
+#!/usr/bin/python
 import sys
 import random
 from PIL import Image, ImageFilter
+
+def splithorizontally(source, destpath1, destpath2):
+    pass
+
+def splitvertically(source, destpath1, destpath2):
+    pass
 
 def scatter(source, destpath1, destpath2):
     img = Image.open( source )
@@ -17,7 +24,6 @@ def scatter(source, destpath1, destpath2):
                 dpx1[x, y] = px[x, y]
             else:
                 dpx2[x, y] = px[x, y]
-            # px1[x, y] = txor(px1[x, y], px2[x, y])
 
     dest1.save(destpath1)
     dest2.save(destpath2)
