@@ -62,6 +62,8 @@ def init_default_modules():
 # Second argument of all functinons should be a tuple containing the string arguments as defined by pipeline
 #    TODO: Implement support for named parameters?
 # All modules shall return a tuple of PIL Images
+
+
 def x_open(piped, passed):
     """
     Opens files from passed paths, and returns PIL Images
