@@ -1,0 +1,46 @@
+1) XOR source with code
+2) Extract code-pixels
+3) Fill code-pixels with random data
+4) Test with applying noised image with source...
+
+TODO: Find better way of providing input files?
+
+
+python xorimg.py "
+  open(Resources/pbnmario.png,Resources/code_hei.png) |
+  xor |
+  open(Resources/code_hei.png) |
+  extract |
+  fill(bg=0 0 0,source=mariopalette.png) | display"
+
+
+
+                      code_hei.png
+                          |
+pbnmario.png              \/
+               -> xor -> extract   ->  fill(bg=0 0 0)  ->
+code_hei.png
+
+
+
+
+pbnmario.png -> noisify -> display
+
+open(Resources/pbnmario.png) | noisify | display
+-------
+
+
+Generate palette:
+python xorimg.py "open(Resources/pbnmario.png) | noisify | xor_color | save(mariopalette.png)"
+
+Generate key:
+python xorimg.py "
+  open(Resources/pbnmario.png,Resources/code_hei2.png) |
+  xor |
+  open(Resources/code_hei2.png) |
+  extract |
+  fill(bg=0 0 0,source=mariopalette.png) | save(key.png)"
+
+
+Retrieve message:
+python xorimg.py "open(Resources/pbnmario.png, key.png) | display"

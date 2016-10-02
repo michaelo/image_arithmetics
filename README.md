@@ -58,3 +58,48 @@ Arbitrary
 Encoding
 Code
 XOR
+
+Proposals:
+* imagekit
+* imagelines
+* codelines
+* codified_images
+* xorimg
+
+
+
+Structure:
+---------------
+xorimg.py
+modules/
+  open.py
+  save.py
+  xor.py
+  scatter.py
+
+
+
+For others to implement new functionality:
+Alternative 1)
+Add new modules to the modules-folder
+How shall they be loaded so that xorimg.py will easily find them?
+
+
+
+Preconditions to use:
+---------------------
+PIL or Pillow installed:
+pip: sudo pip install Pillow
+easy_install: sudo easy_install Pillow
+apt-get: sudo apt-get install python-PIL
+ubuntu: sudo apt-get install python-imaging
+
+
+
+Design considerations:
+----------------------
+Consider operation allowing branching and joining.
+jQuery-style chaining?
+  ex: open(afile).dothis(open(otherfile).dootherting()).dojointthing()
+gstreamer-style pipelines?
+  ex: ...
