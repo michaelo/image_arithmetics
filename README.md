@@ -1,5 +1,6 @@
 Image arithmetic toolset
 ========================
+Author: Michael Odden
 
 A pipeline-based approach to chaining image-based operations:
 

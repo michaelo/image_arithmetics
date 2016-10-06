@@ -2,6 +2,7 @@
 import sys
 import re
 from PIL import Image
+from modules import steg
 
 func_map = {}
 
@@ -56,6 +57,8 @@ def init_default_modules():
     register_module("fill", x_fill)
     register_module("noisify", x_noisify)
     register_module("duplicate", x_duplicate)
+    register_module("steg", steg.steg)
+    register_module("isteg", steg.isteg)
 
 # Rules:
 # First argument of all functions should be a tuple containing return-values of the previous functions in the pipeline

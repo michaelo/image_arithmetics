@@ -41,6 +41,12 @@ python ia.py "
   extract |
   fill(bg=0 0 0,source=mariopalette.png) | save(key.png)"
 
+python ia.py "
+  open(palette.png,palette2.png) |
+  xor |
+  open(Resources/code_hei2.png) |
+  extract |
+  fill(bg=0 0 0,source=palette.png) | save(key.png)"
 
 Retrieve message:
 python ia.py "open(Resources/pbnmario.png, key.png) | display"
