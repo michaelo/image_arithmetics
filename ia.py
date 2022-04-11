@@ -118,8 +118,8 @@ def x_xor(piped, __):
         pxs.append(img.load())
 
     for (i,__) in enumerate(pxs[1:]):
-        for y in xrange(piped[0].size[0]):
-            for x in xrange(piped[0].size[1]):
+        for x in range(piped[0].size[0]):
+            for y in range(piped[0].size[1]):
                 pxs[0][x, y] = _txor(pxs[0][x, y], pxs[i+1][x, y])
 
     return (piped[0],)
@@ -424,10 +424,10 @@ init_default_modules()
 def test():
     for tc in test_pipelines:
         result = parse_pipeline(tc[0])
-        print "Testing   : {}".format(tc[0])
-        print "Expecting : {}".format(tc[1])
-        print "Got       : {}".format(result)
-        print "Conclusion: {}".format(result == tc[1])
+        print("Testing   : {}".format(tc[0]))
+        print("Expecting : {}".format(tc[1]))
+        print("Got       : {}".format(result))
+        print("Conclusion: {}".format(result == tc[1]))
 
 if __name__ == "__main__":
     from pprint import pprint

@@ -50,8 +50,8 @@ def steg(piped, passed):
                 (px1[2] & high_mask) | px2_2
             )
 
-    for y in xrange(piped[0].size[0]):
-        for x in xrange(piped[0].size[1]):
+    for x in range(piped[0].size[0]):
+        for y in range(piped[0].size[1]):
             dpx[0][x,y] = embed(dpx[0][x,y], dpx[1][x,y], bits)
 
     return (piped[0],)
@@ -71,15 +71,21 @@ def isteg(piped, passed):
         ]
 
     def extract(px, bits):
+        
         low_mask = 0xff>>(8-bits)
-        # high_mask = 0xff^low_mask
+        rest_mask = 0xff<<(bits)
+        high_mask = 0xff^low_mask
         return ((px[0] & low_mask) << (8-bits),
                 (px[1] & low_mask) << (8-bits),
                 (px[2] & low_mask) << (8-bits)
             )
+        # return ((px[0] & rest_mask),
+        #         (px[1] & rest_mask),
+        #         (px[2] & rest_mask)
+        #     )
 
-    for y in xrange(piped[0].size[0]):
-        for x in xrange(piped[0].size[1]):
+    for x in range(piped[0].size[0]):
+        for y in range(piped[0].size[1]):
             dpx[1][x,y] = extract(dpx[0][x,y], bits)
 
     return (dest,)
